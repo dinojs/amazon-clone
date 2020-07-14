@@ -1,9 +1,64 @@
 .header {
-    background-color: #131920;
+  background-color: #131920;
+  display: flex; /*pushes it in a row*/
+  align-items: center;
+  position: sticky; /*Sticks the navbar on top while scrolling*/
+  top: 0;
+  z-index: 100; /*Keep element of top of others*/
 }
+
+.header__search {
+  display: flex;
+  flex: 1; /*Uses as much room as it can*/
+}
+
 .header__logo {
-    width: 100px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+  object-fit: contain; /*Don't stretch, keep same aspect ratio*/
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.header__searchInput {
+  height: 12px;
+  padding: 10px;
+  border: none;
+  width: 100%; /*Make searchInput to take 100% of the width*/
+}
+.header__searchIcon {
+  padding: 5px;
+  height: 22px;
+  background-color: #cd9040;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-evenly; /*Spaces text evenly*/
+}
+.header__link {
+  color: white;
+  text-decoration: none; /*Removes underline from link*/
+}
+.header__option {
+  display: flex;
+  flex-direction: column; /*Puts elements in a column (text)*/
+  margin-left: 10px; /*Margin appended to the outside of the element, padding within*/
+  margin-right: 10px;
+}
+
+.header__optionLineOne {
+  font-size: 10px;
+}
+
+.header__optionLineTwo {
+  font-size: 13px;
+  font-weight: 800; /*Goes up by 100*/
+}
+
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+}
+.header__basketCount {
+  margin-left: 10px;
+  margin-right: 10px;
 }
