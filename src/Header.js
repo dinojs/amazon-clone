@@ -1,8 +1,11 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ cart }] = useStateValue();
+  console.log(cart);
   return (
     <nav className="header">
       {/* Logo */}
@@ -55,8 +58,8 @@ function Header() {
             alt=""
             class="header__searchIcon header__basketCount"
           />
-          {/* Number of items */}
-          <span className="header__optionLineTwo">0</span>
+          {/* Number of items, ? Optional */}
+          <span className="header__optionLineTwo">{cart?.length}</span>
         </div>
       </Link>
     </nav>

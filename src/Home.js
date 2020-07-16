@@ -11,15 +11,15 @@ function Home() {
         <Product
           id="1"
           title="Nike SB x Ben & Jerry’s Dunk Low 'Chunky Dunky' (2020)"
-          price="999.99"
+          price={6999.99}
           rating={4}
           image="https://cdn.filestackcontent.com/CyHCUoLvSTc5NJ4qCkuT"
         />
 
         <Product
-          id="1"
+          id="2"
           title="Nike SB x Ben & Jerry’s Dunk Low 'Chunky Dunky' (2020)"
-          price={999.99}
+          price={3999.99}
           rating={4}
           image="https://cdn.filestackcontent.com/C5yVc5K1R2mBiQ77ad7w"
         />
@@ -27,15 +27,15 @@ function Home() {
 
       <div className="home__row">
         <Product
-          id="1"
+          id="3"
           title="Nike SB x Ben & Jerry’s Dunk Low 'Chunky Dunky' (2020)"
-          price="999.99"
+          price={1999.99}
           rating={4}
           image="https://cdn.filestackcontent.com/Fguy8GeRwC3rompWZlcw"
         />
 
         <Product
-          id="1"
+          id="4"
           title="Nike SB x Ben & Jerry’s Dunk Low 'Chunky Dunky' (2020)"
           price={999.99}
           rating={4}
@@ -43,9 +43,9 @@ function Home() {
         />
 
         <Product
-          id="1"
+          id="5"
           title="Nike SB x Ben & Jerry’s Dunk Low 'Chunky Dunky' (2020)"
-          price={999.99}
+          price={799.99}
           rating={4}
           image="https://cdn.filestackcontent.com/SRjMEIAhSD2L9FCdmhA4"
         />
@@ -53,9 +53,9 @@ function Home() {
 
       <div className="home__row">
         <Product
-          id="1"
+          id="6"
           title="Nike SB x Ben & Jerry’s Dunk Low 'Chunky Dunky' (2020)"
-          price="999.99"
+          price={499.99}
           rating={4}
           image="https://cdn.filestackcontent.com/oKmIBkaMQkizsPaLWYw8"
         />
