@@ -2,15 +2,22 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
 
 function Header() {
-  const [{ cart }] = useStateValue();
-  console.log(cart);
+  const [{ cart, user }] = useStateValue();
+
+  //if clicked, logs out
+  const login = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
   return (
     <nav className="header">
       {/* Logo */}
       <Link to="/ ">
-        {" "}
         {/*Make logo clickable*/}
         <img
           className="header__logo"
@@ -25,15 +32,21 @@ function Header() {
         {/* Logo box */}
         <img src="/icons/search.svg" alt="" class="header__searchIcon" />
       </div>
+
       {/* Links */}
       <div className="header__nav"></div>
       {/*1st Link */}
-      <Link to="/login" className="header__link">
-        <div className="header__option">
-          <span className="header__optionLineOne">Hello Dino</span>
-          <span className="header__optionLineTwo">Sign In</span>
+      {/* Redirect if the user is not logged in */}
+      <Link to={!user && "/login"} className="header__link">
+        <div onClick={login} className="header__option">
+          <span className="header__optionLineOne">Hello {user?.email}</span>
+          {/* If logged in : else */}
+          <span className="header__optionLineTwo">
+            {user ? "Sign Out" : "Sign In"}
+          </span>
         </div>
       </Link>
+
       {/*2nd Link */}
       <Link to="/" className="header__link">
         {/*href refreshes page, link does not*/}
@@ -42,6 +55,7 @@ function Header() {
           <span className="header__optionLineTwo">& Orders</span>
         </div>
       </Link>
+
       {/*3rd Link */}
       <Link to="/" className="header__link">
         <div className="header__option">
@@ -49,6 +63,7 @@ function Header() {
           <span className="header__optionLineTwo">Membership</span>
         </div>
       </Link>
+
       {/* Basket */}
       <Link to="/checkout" className="header__link">
         <div className="header__optionBasket">
