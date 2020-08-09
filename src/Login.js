@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./style/Login.css";
 import { auth } from "./firebase";
 import { Link, useHistory } from "react-router-dom";
 
@@ -28,7 +28,9 @@ function Login() {
 
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then((res) => {})
+      .then((res) => {
+        history.push("/");
+      })
       .catch((err) => {
         console.log(`Error Creating Account ${err}`);
       });
@@ -45,7 +47,7 @@ function Login() {
 
       {/* Login form */}
       <div className="login__container">
-        <h1>Sing in</h1>
+        <h1>Sign in</h1>
         <form>
           <h5>E-mail</h5>
           <input
